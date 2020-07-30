@@ -9,8 +9,8 @@ const App = () => {
   const [ingredients, setIngredients] = useState([
     { name: 'Meat', count: 0, price: 50, id: 'id-0' },
     { name: 'Salad', count: 0, price: 5, id: 'id-1' },
-    { name: 'Cheese', count: 0, price: 20, index: 'id-2' },
-    { name: 'Bacon', count: 0, price: 30, index: 'id-3' },
+    { name: 'Cheese', count: 0, price: 20, id: 'id-2' },
+    { name: 'Bacon', count: 0, price: 30, id: 'id-3' },
   ]);
 
   const [totalPrice, setTotalPrice] = useState(20);
