@@ -7,10 +7,10 @@ import AddIngredientList from '../components/AddIngredientList/AddIngredientList
 const App = () => {
 
   const [ingredients, setIngredients] = useState([
-    { name: 'Meat', count: 0, price: 50, index: 0 },
-    { name: 'Salad', count: 0, price: 5, index: 1 },
-    { name: 'Cheese', count: 0, price: 20, index: 2 },
-    { name: 'Bacon', count: 0, price: 30, index: 3 },
+    { name: 'Meat', count: 0, price: 50, id: 'id-0' },
+    { name: 'Salad', count: 0, price: 5, id: 'id-1' },
+    { name: 'Cheese', count: 0, price: 20, index: 'id-2' },
+    { name: 'Bacon', count: 0, price: 30, index: 'id-3' },
   ]);
 
   const [totalPrice, setTotalPrice] = useState(20);
@@ -19,7 +19,8 @@ const App = () => {
 
   const [burgerVisualIngredientsIndex, setBurgerVisualIngredientsIndex] = useState(0);
 
-  const addIngredient = index => {
+  const addIngredient = id => {
+    const index = ingredients.findIndex(ing => ing.id === id);
     let ingredientsCopy = [...ingredients];
     let totalPriceCopy = totalPrice;
     let burgerVisualIngredientsCopy = [...burgerVisualIngredients];
@@ -39,7 +40,8 @@ const App = () => {
     setBurgerVisualIngredientsIndex(burgerVisualIngredientsIndexCopy);
   }
 
-  const deleteOnlyOneIngredient = index => {
+  const deleteOnlyOneIngredient = id => {
+    const index = ingredients.findIndex(ing => ing.id === id);
     let ingredientsCopy = [...ingredients];
     let totalPriceCopy = totalPrice;
     let burgerVisualIngredientsCopy = [...burgerVisualIngredients];
@@ -58,7 +60,8 @@ const App = () => {
     setBurgerVisualIngredients(burgerVisualIngredientsCopy);
   }
 
-  const deleteAllIngredients = index => {
+  const deleteAllIngredients = id => {
+    const index = ingredients.findIndex(ing => ing.id === id);
     let ingredientsCopy = [...ingredients];
     let totalPriceCopy = totalPrice;
     let burgerVisualIngredientsCopy = [...burgerVisualIngredients];

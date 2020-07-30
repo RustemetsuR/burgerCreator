@@ -5,10 +5,10 @@ const AddIngredientList = props => {
     return props.ingredients.map(ingredient => {
         return (
             <AddIngredient
-                key={ingredient.index}
-                removeAll={() => props.deleteAllIngredients(ingredient.index)}
-                removeOne={() => props.deleteOnlyOneIngredient(ingredient.index)}
-                add={() => props.addIngredient(ingredient.index)}
+                key={ingredient.id}
+                removeAll={() => props.deleteAllIngredients(ingredient.id)}
+                removeOne={() => props.deleteOnlyOneIngredient(ingredient.id)}
+                add={() => props.addIngredient(ingredient.id)}
                 name={ingredient.name}
                 price={ingredient.price}
                 amount={ingredient.count} />
